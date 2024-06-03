@@ -1,0 +1,17 @@
+<form class="form" [formGroup]="authForm" (submit)="submitForm()">
+    <h1>{{ title }}</h1>
+    <p class="authMsg">{{authMessage}}</p>
+    <div class="form-control">
+        <label>Username</label>
+        <input type="text" formControlName="username" />
+    </div>
+
+    <div class="form-control">
+        <label>Password</label>
+        <input type="password" formControlName="password" />
+    </div>
+
+    <p (click)="switchTab()">{{ linkText }}</p>
+
+    <button type="submit">{{ buttonLabel }}</button>
+</form>

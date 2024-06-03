@@ -1,0 +1,66 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin: auto;
+    height: 100dvh;
+    max-width: 300px;
+}
+
+h1{
+    color: whitesmoke;
+}
+
+.form-control{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    border-radius: 2px;
+    outline: none;
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus{
+    border: 1px solid #aaeafa
+}
+
+label{
+    color: whitesmoke;
+}
+
+button{
+    padding: 8px;
+    border-radius: 2px;
+    outline: none;
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    background: #6fd5de;
+}
+
+p{
+    color: whitesmoke;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+p:hover{
+    color: #6fd5de;
+}
+
+.authMsg{
+    text-align: center;
+    color: red;
+    width: 100%;
+}
