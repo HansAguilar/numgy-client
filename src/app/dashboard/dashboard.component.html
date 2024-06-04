@@ -1,6 +1,6 @@
 <div class="dashboard-container">
     <div class="guess-container">
-        <h2>Hello {{username}}</h2>
+        <h2>Hello user999</h2>
         <h1>Guess the number 1 - 100</h1>
 
         <form [formGroup]="guessForm" (ngSubmit)="submitGuess()">
@@ -33,9 +33,12 @@
     <div class="leaderboard-container">
         <div class="leaderboard-header">Leaderboard</div>
         <ul class="leaderboard-list">
-            <li *ngFor="let rank of ranking; let i = index">
+            <li><span>1. user999: 251 points</span></li>
+            <li><span>2. kiki: 135 points</span></li>
+            <li><span>3. master_uy: 38 points</span></li>
+            <!-- <li *ngFor="let rank of ranking; let i = index">
                 <span>{{i + 1}}. {{ rank.user.username }}: {{ rank.user.overall_score }} points</span>
-            </li>
+            </li> -->
         </ul>
     </div>
 </div>

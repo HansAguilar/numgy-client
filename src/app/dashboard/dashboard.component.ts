@@ -38,9 +38,9 @@ export class DashboardComponent implements OnInit {
   });
 
   ngOnInit() {
-    if (localStorage.getItem('loggedIn') !== "true") {
-      this.router.navigate(['/']);
-    }
+    // if (localStorage.getItem('loggedIn') !== "true") {
+    //   this.router.navigate(['/']);
+    // }
 
     this.userService.getLeaderboard().subscribe({
       next: (v) => {

@@ -26,12 +26,6 @@ export class ChallengeComponent implements OnInit {
     if (isLogged) {
       this.router.navigate(['/welcome']);
     }
-
-    // this.userService.loggedIn$.subscribe(loggedIn => {
-    //   if (loggedIn) {
-    //     this.router.navigate(['/welcome']);
-    //   }
-    // });
   }
 
   authForm = new FormGroup({
@@ -52,8 +46,14 @@ export class ChallengeComponent implements OnInit {
   }
 
   submitForm() {
-    const username = this.authForm.value.username ?? "";
-    const password = this.authForm.value.password ?? "";
+    console.log("a")
+    const username = this.authForm.value.username?.trim() ?? "";
+    const password = this.authForm.value.password?.trim() ?? "";
+
+    if(!username || !password){
+      this.authMessage = "Please input a username and password";
+      return;
+    }
 
     if (this.buttonLabel === "Login") {
       this.userService.loginUser({ username, password }).subscribe({
@@ -64,12 +64,7 @@ export class ChallengeComponent implements OnInit {
         error: (e) => this.authMessage = e.error.message,
       })
 
-      // this.userService.getLeaderboard().subscribe({
-      //   next: (v) => {
-      //     this.authMessage = "";
-      //   },
-      //   error: (e) => this.authMessage = e.error.message,
-      // })
+      return;
     }
 
     else {
@@ -77,6 +72,7 @@ export class ChallengeComponent implements OnInit {
         next: (v) => this.authMessage = v.message,
         error: (e) => this.authMessage = e.error.message,
       })
+      return;
     }
   }
 }
