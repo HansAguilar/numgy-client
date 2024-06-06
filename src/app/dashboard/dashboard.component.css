@@ -1,88 +1,63 @@
-p {
-    color: whitesmoke;
+.terminal-container {
+    position: relative;
+    background-color: #151515;
+    color: #fff; 
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid #1a1b1a; 
+    max-width: 800px;
+    margin: 50px auto;
+    
 }
 
-button,
-a {
-    padding: 8px 12px;
-    outline: transparent;
-    border: none;
-    background: #ccc;
-    text-align: center;
+.terminal-header {
+    padding: 10px;
+    border-bottom: 1px solid #000000;
+    text-align: center; 
+    background-color: #3b3737;
+
 }
 
-label {
-    font-size: 1.2rem;
-}
-
-input {
-    padding: 8px 12px;
-    outline: transparent;
-    border: none;
-}
-
-.dashboard-container {
-    color: white;
-    min-height: 100dvh;
-    width: 100%;
+.terminal-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px;
 }
 
 .guess-container {
-    max-width: 30rem;
-    width: 100%;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.seperator {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
-
-.seperator>* {
-    width: 100%;
+    max-width: 50%;
+    flex: 1;
+    padding-right: 20px;
 }
 
 .leaderboard-container {
-    border: 2px solid white;
-    max-width: 20rem;
-    width: 100%;
-    background: #222;
-    padding: 1rem;
-    margin-left: 1rem;
+    max-width: 50%;
+    flex: 1;
 }
 
-.leaderboard-header {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: center;
-    border-bottom: 1px solid white;
-    padding-bottom: 0.5rem;
+.command-line {
+    color: rgb(115, 148, 82);
+    display: inline-block; 
 }
 
-.leaderboard-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.leaderboard-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #555;
-}
-
-.leaderboard-list li:last-child {
-    border-bottom: none;
+.command-line .content {
+    color: #fff; 
 }
 
 .leaderboard-list li span {
-    display: block;
-    font-size: 1.2rem;
-    color: whitesmoke;
+    color: #fff;
 }
+
+.custom-input {
+    background: none; 
+    border: none; 
+    color: #fff;
+    
+}
+
+.custom-input:hover,
+.custom-input:focus {
+    border: none; 
+    outline: none;
+}
+
+

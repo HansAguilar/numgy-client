@@ -1,44 +1,52 @@
-<div class="dashboard-container">
-    <div class="guess-container">
-        <h2>Hello user999</h2>
-        <h1>Guess the number 1 - 100</h1>
-
-        <form [formGroup]="guessForm" (ngSubmit)="submitGuess()">
-            <p>Attempt: {{ attempt }}</p>
-
-            <div>
-                <label for="guess">Answer:</label>
-                <input type="text" id="guess" formControlName="guess" (keypress)="preventNonNumericInput($event)">
+<div class="terminal-container">
+    <div class="terminal-header"><p>user999{{'@'}}guess:~</p></div>
+    <div class="terminal-content">
+        <div class="guess-container">
+            <div class="command-line">
+                user999{{'@'}}guess:<span class="content">~</span>
             </div>
+            
 
-            <button type="submit">Guess</button>
+            <p>Hi</p>
+            <p>Guess the number 1 - 100</p>
 
-            <div *ngIf="guessForm.controls['guess'].invalid && guessForm.controls['guess'].touched">
-                <small *ngIf="guessForm.controls['guess'].errors?.['min']">Guess must be greater than 0.</small>
-                <small *ngIf="guessForm.controls['guess'].errors?.['max']">Guess must be less than or equal to
-                    100.</small>
-                <small *ngIf="guessForm.controls['guess'].errors?.['pattern']">Guess must be a number and should not
-                    start with zero unless it's "0".</small>
+            <form [formGroup]="guessForm" (ngSubmit)="submitGuess()">
+                <p>Attempt: {{ attempt }}</p>
+
+                <div class="command-line">
+                    <label for="guess">user999{{'@'}}answer:</label>
+                    <input type="text" id="guess" formControlName="guess" (keypress)="preventNonNumericInput($event)" class="custom-input">
+                </div>
+
+                <button type="submit">Guess</button>
+
+                <div *ngIf="guessForm.controls['guess'].invalid && guessForm.controls['guess'].touched">
+                    <small *ngIf="guessForm.controls['guess'].errors?.['min']">Guess must be greater than 0.</small>
+                    <small *ngIf="guessForm.controls['guess'].errors?.['max']">Guess must be less than or equal to
+                        100.</small>
+                    <small *ngIf="guessForm.controls['guess'].errors?.['pattern']">Guess must be a number and should not
+                        start with zero unless it's "0".</small>
+                </div>
+            </form>
+
+            <p *ngIf="feedback">{{ feedback }}</p>
+
+            <div class="seperator">
+                <!-- <a [routerLink]="['/']">Back</a> -->
+                <button (click)="logoutUser()">Log out</button>
             </div>
-        </form>
-
-        <p *ngIf="feedback">{{ feedback }}</p>
-
-        <div class="seperator">
-            <!-- <a [routerLink]="['/']">Back</a> -->
-            <button (click)="logoutUser()">Log out</button>
         </div>
-    </div>
 
-    <div class="leaderboard-container">
-        <div class="leaderboard-header">Leaderboard</div>
-        <ul class="leaderboard-list">
-            <li><span>1. user999: 251 points</span></li>
-            <li><span>2. kiki: 135 points</span></li>
-            <li><span>3. master_uy: 38 points</span></li>
-            <!-- <li *ngFor="let rank of ranking; let i = index">
-                <span>{{i + 1}}. {{ rank.user.username }}: {{ rank.user.overall_score }} points</span>
-            </li> -->
-        </ul>
+        <div class="leaderboard-container">
+            <div class="leaderboard-header">Leaderboard</div>
+            <ul class="leaderboard-list">
+                <li><span>1. user999: 251 points</span></li>
+                <li><span>2. kiki: 135 points</span></li>
+                <li><span>3. master_uy: 38 points</span></li>
+                <!-- <li *ngFor="let rank of ranking; let i = index">
+                    <span>{{i + 1}}. {{ rank.user.username }}: {{ rank.user.overall_score }} points</span>
+                </li> -->
+            </ul>
+        </div>
     </div>
 </div>
